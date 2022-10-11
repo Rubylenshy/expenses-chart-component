@@ -95,10 +95,9 @@ header p{
     margin-bottom: 5px;
 }
 .bar{
-    width: 40px;
+    width: 35px;
     border-radius: 5px;
     background: var(--soft-red);
-    height: 50px;
 }
 .amount-this-month{
     align-items: center;

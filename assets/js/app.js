@@ -16,7 +16,7 @@ extract('../data.json');
 async function extract(file){
     let Obj1 = await fetch(file);
     let myJson = await Obj1.text();
-    // console.log(myJson);
+    console.log(myJson);
 
     const jsonExtracted = JSON.parse(myJson);
     console.log(jsonExtracted);
