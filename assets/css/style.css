@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root{
+    --soft-red: hsl(10, 79%, 65%);
+    --cyan: hsl(186, 34%, 60%);
+
+    --dark-brown: hsl(25, 47%, 15%);
+    --medium-brown: hsl(28, 10%, 53%);
+    --cream: hsl(27, 66%, 92%);
+    --vp-orange: hsl(33, 100%, 98%);
+    --white: hsl(0, 20%, 98%);
+    --ff: 'DM Sans', sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--ff);
+}
+body{
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    min-height: 100vh;
+    background: var(--cream);
+}
+.flex{
+    display: flex;
+}
+p{
+    font-size: 1.05em;
+    color: var(--medium-brown);
+}
+hr{
+    background: var(--cream);
+    border: 1px solid var(--cream);
+    margin: 20px 0;
+}
+header,.amount-this-month,
+.chart{
+    justify-content: space-between;
+}
+
+
+.card{
+    width: 100%;
+}
+header,
+.card-content{
+    border-radius: 20px;
+    padding: 25px 20px;
+}
+
+header{
+    background: var(--soft-red);
+    margin-bottom: 20px;
+    color: var(--white);
+}
+header h1{
+    font-weight: 400;
+}
+header p{
+    color: var(--white);
+}
+.card-content{
+    background: var(--white);
+}
+.card-content h1{
+    font-size: 1.75em;
+}
+.chart{
+    height: 200px;
+    align-items: flex-end;
+}
+.chart > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.chart > div:hover .bar{
+    opacity: .7;
+}
+.chart > div:hover .value{
+    display: block;
+}
+.value{
+    display: none;
+    background: var(--dark-brown);
+    color: var(--white);
+    font-weight: 700;
+    font-size: .95em;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.bar{
+    width: 40px;
+    border-radius: 5px;
+    background: var(--soft-red);
+    height: 50px;
+}
+.amount-this-month{
+    align-items: center;
+}
+.amount-this-month h1{
+    font-size: 2.25em;
+    color: var(--dark-brown)
+}
+.percentage-last-month{
+    text-align: right;
+}
+.percentage-last-month p:nth-child(1){
+    color: var(--dark-brown);
+    font-weight: 700;
+}
+
+
+
+@media (min-width: 600px) {
+    .card{
+        width: 480px;
+    }
+    .bar{
+        width: 50px;
+    }
+}
