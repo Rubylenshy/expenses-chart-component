@@ -26,7 +26,8 @@ async function extract(file){
         day[i].textContent = jsonExtracted[i].day;
         bar[i].style.height = jsonExtracted[i].amount*3 + 'px';
 
-        const nowDay = new Date().getUTCDay();
+        const nowDayx = new Date().getUTCDay();
+        const nowDay = nowDayx - 1;
         bar[nowDay].style.backgroundColor = 'hsl(186, 34%, 60%)';
     }
 
