@@ -11,6 +11,7 @@ Thanks for checking out this front-end coding challenge.
 - Semantic HTML5 markup
 - CSS custom properties
 - CSS Flexbox
+- Fetch API
 - ❤️ Reuben
 
 ### I learnt
