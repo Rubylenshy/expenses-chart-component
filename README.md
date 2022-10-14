@@ -18,7 +18,7 @@ Thanks for checking out this front-end coding challenge.
 
 ### Links
 
-- Live Site URL: [Expenses Chart Component](https://rubylenshy.github.io/expenses-chart-component/)
+- Live Site URL: [Expenses Chart Component](https://expenses-chart-component-gamma.vercel.app/)
 
 ## Author
 
