@@ -95,7 +95,7 @@ header p{
     margin-bottom: 5px;
 }
 .bar{
-    width: 35px;
+    width: 30px;
     border-radius: 5px;
     background: var(--soft-red);
 }
@@ -121,6 +121,6 @@ header p{
         width: 480px;
     }
     .bar{
-        width: 50px;
+        width: 40px;
     }
 }

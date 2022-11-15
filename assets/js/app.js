@@ -1,7 +1,5 @@
 const chart = document.querySelector('.chart')
-const dollarValue = chart.querySelectorAll('.value')
-const bar = chart.querySelectorAll('.bar')
-const day = chart.querySelectorAll('p')
+
 
 //Method 1
 // fetch('../data.json')
@@ -16,20 +14,30 @@ extract('../data.json');
 async function extract(file){
     let Obj1 = await fetch(file);
     let myJson = await Obj1.text();
-    console.log(myJson);
 
     const jsonExtracted = JSON.parse(myJson);
-    console.log(jsonExtracted);
+    
+    let htmlChart = ''; 
+    jsonExtracted.forEach(item=>{
+        let newChart = `<div class="day">
+                            <div class="value">$${item.amount}</div>
+                            <div class="bar" style="height: ${item.amount*3}px;"></div>
+                            <p>${item.day}</p>
+                        </div>`
+    
+        htmlChart += newChart;
 
-    for (let i = 0; i < dollarValue.length; i++) {
-        dollarValue[i].textContent = '$' + jsonExtracted[i].amount;
-        day[i].textContent = jsonExtracted[i].day;
-        bar[i].style.height = jsonExtracted[i].amount*3 + 'px';
+        
+    })
 
-        const nowDayx = new Date().getUTCDay();
-        const nowDay = nowDayx - 1;
-        bar[nowDay].style.backgroundColor = 'hsl(186, 34%, 60%)';
-    }
+    chart.innerHTML = htmlChart;
+        window.addEventListener('load', ()=>{
+            const bar = document.querySelectorAll('.bar')
+            const newDay = new Date().getUTCDay();
+            for (let i = 0; i < bar.length; i++) {
+                bar[newDay-1].style.backgroundColor = `hsl(186, 34%, 60%)`;
+            }
+        });
 
 }
 
